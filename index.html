@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Өмірдің мәні, кәсіби өзін-өзі анықтау және денсаулық психологиясы</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+
+<style>
+  :root{
+    --primary:#2E4057;
+    --primary2:#3D5A80;
+    --accent:#E76F51;
+    --accent2:#F4A261;
+    --gold:#E9C46A;
+    --green:#2A9D8F;
+    --light:#F7F9FB;
+    --dark:#1A1A2E;
+    --muted:#6C757D;
+    --line:#E3E7EE;
+  }
+  html,body{height:100%;margin:0;padding:0;overflow:hidden;}
+  .reveal{font-family:'Inter','Segoe UI',sans-serif;color:var(--dark);font-size:22px;}
+  .reveal h1,.reveal h2,.reveal h3,.reveal h4{
+    font-family:'Inter','Segoe UI',sans-serif;color:var(--primary);
+    text-transform:none;letter-spacing:-.01em;font-weight:800;margin:.1em 0;
+  }
+  .reveal section{text-align:left;padding:0;}
+  .reveal section p{margin:.25em 0;line-height:1.4;}
+  .reveal .controls{color:var(--primary);}
+  .reveal .progress{color:var(--accent);height:4px;}
+
+  /* Title slide */
+  .title-slide{
+    background:linear-gradient(135deg,#2E4057 0%,#3D5A80 50%,#5B82AB 100%)!important;
+    color:#fff!important;text-align:center;height:100%;display:flex!important;
+    flex-direction:column;justify-content:center;padding:1em;position:relative;overflow:hidden;
+  }
+  .title-slide::before{
+    content:"";position:absolute;top:-80px;right:-80px;width:350px;height:350px;
+    background:radial-gradient(circle,var(--accent) 0%,transparent 70%);opacity:.3;
+    animation:float 6s ease-in-out infinite;
+  }
+  .title-slide::after{
+    content:"";position:absolute;bottom:-120px;left:-120px;width:400px;height:400px;
+    background:radial-gradient(circle,var(--gold) 0%,transparent 70%);opacity:.25;
+    animation:float 8s ease-in-out infinite reverse;
+  }
+  @keyframes float{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-20px) scale(1.05);}}
+  .title-slide h1{color:#fff!important;font-size:1.5em!important;line-height:1.15;margin:.1em 0;text-shadow:0 4px 20px rgba(0,0,0,.3);}
+  .title-slide .subtitle{color:var(--gold);font-size:1em;font-weight:600;margin:.4em 0;}
+  .title-slide .badge{
+    display:inline-block;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);
+    padding:.3em 1em;border-radius:50px;font-size:.45em;letter-spacing:.2em;
+    text-transform:uppercase;margin:.3em;border:1px solid rgba(255,255,255,.3);
+  }
+  .title-slide .meta{font-size:.4em;opacity:.9;margin-top:.8em;line-height:1.5;}
+
+  /* Section divider */
+  .section-slide{
+    background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%)!important;
+    color:#fff!important;text-align:center;height:100%;display:flex!important;
+    flex-direction:column;justify-content:center;padding:1em;position:relative;overflow:hidden;
+  }
+  .section-slide .num{font-size:5em;font-weight:900;color:rgba(255,255,255,.15);line-height:1;}
+  .section-slide h1{color:#fff!important;font-size:2em!important;margin-top:-.3em!important;}
+  .section-slide p{font-size:.7em;opacity:.95;max-width:80%;margin:.8em auto;}
+
+  /* Headers */
+  .slide-header{
+    border-bottom:3px solid var(--accent);padding-bottom:.2em;margin-bottom:.4em;
+    font-size:1.1em!important;font-weight:800;color:var(--primary);
+  }
+  .slide-number-big{
+    position:absolute;top:-5px;right:0;font-size:.55em;color:var(--muted);
+    background:var(--light);padding:3px 10px;border-radius:20px;font-weight:600;
+  }
+
+  /* Cards */
+  .cards{display:grid;gap:.5em;}
+  .cards.c2{grid-template-columns:1fr 1fr;}
+  .cards.c3{grid-template-columns:repeat(3,1fr);}
+  .cards.c4{grid-template-columns:repeat(4,1fr);}
+  .card{
+    background:#fff;border-radius:10px;padding:.6em .8em;box-shadow:0 2px 10px rgba(0,0,0,.08);
+    border-left:4px solid var(--accent);transition:transform .3s,box-shadow .3s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.15);}
+  .card.primary{border-color:var(--primary);}
+  .card.gold{border-color:var(--gold);}
+  .card.green{border-color:var(--green);}
+  .card.accent{border-color:var(--accent);}
+  .card h4{font-size:.75em;margin:0 0 .25em 0;color:var(--primary);font-weight:700;}
+  .card p{font-size:.6em;margin:0;color:var(--dark);line-height:1.4;}
+
+  .stat-card{
+    background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;
+    border-radius:14px;padding:.8em .5em;text-align:center;
+    box-shadow:0 6px 20px rgba(46,64,87,.3);
+  }
+  .stat-card .val{font-size:1.8em;font-weight:900;line-height:1;color:var(--gold);}
+  .stat-card .lbl{font-size:.5em;opacity:.9;margin-top:.3em;text-transform:uppercase;letter-spacing:.08em;}
+
+  /* Icon list */
+  .icon-list{list-style:none!important;margin:0!important;padding:0!important;}
+  .icon-list li{
+    padding:.3em 0 .3em 1.8em;position:relative;font-size:.7em;line-height:1.4;
+    border-bottom:1px solid var(--line);
+  }
+  .icon-list li::before{
+    content:"▸";position:absolute;left:.3em;color:var(--accent);font-weight:bold;font-size:1.2em;
+  }
+  .icon-list li strong{color:var(--primary);}
+
+  /* Icon big list */
+  .big-list{list-style:none!important;margin:0!important;padding:0!important;}
+  .big-list li{
+    display:flex;align-items:center;gap:.8em;padding:.5em;margin:.3em 0;
+    background:var(--light);border-radius:8px;border-left:5px solid var(--accent);
+    transition:transform .2s;
+  }
+  .big-list li:hover{transform:translateX(5px);}
+  .big-list .icon{font-size:1.6em;min-width:1.5em;text-align:center;}
+  .big-list .content{flex:1;}
+  .big-list .content h4{font-size:.85em;margin:0 0 .2em 0;color:var(--primary);}
+  .big-list .content p{font-size:.6em;margin:0;color:var(--dark);}
+
+  /* Chart */
+  .chart-container{position:relative;margin:auto;padding:.2em;}
+
+  /* Two-column */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:.8em;align-items:center;}
+
+  /* Highlight */
+  .highlight-box{
+    background:linear-gradient(135deg,#FFF4E0,#FFECB8);
+    border-left:5px solid var(--gold);padding:.55em .8em;border-radius:8px;margin:.4em 0;
+    font-size:.65em;line-height:1.4;
+  }
+  .accent-box{
+    background:linear-gradient(135deg,#FFE8E1,#FFD4C9);
+    border-left:5px solid var(--accent);padding:.55em .8em;border-radius:8px;margin:.4em 0;
+    font-size:.65em;line-height:1.4;
+  }
+  .success-box{
+    background:linear-gradient(135deg,#E0F7F1,#C4EBDF);
+    border-left:5px solid var(--green);padding:.55em .8em;border-radius:8px;margin:.4em 0;
+    font-size:.65em;line-height:1.4;
+  }
+
+  /* Tag */
+  .tag{display:inline-block;background:var(--light);color:var(--primary);padding:.15em .6em;
+    border-radius:20px;font-size:.55em;margin:.08em;font-weight:600;border:1px solid var(--line);}
+
+  .text-accent{color:var(--accent);font-weight:700;}
+  .text-primary{color:var(--primary);font-weight:700;}
+  .text-green{color:var(--green);font-weight:700;}
+  .small{font-size:.5em;color:var(--muted);}
+
+  /* Timeline */
+  .timeline{display:flex;justify-content:space-between;position:relative;padding:.5em 0;}
+  .timeline::before{
+    content:"";position:absolute;top:35%;left:5%;right:5%;height:3px;
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+  }
+  .timeline-step{
+    position:relative;z-index:2;background:#fff;border:3px solid var(--primary);
+    width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:900;color:var(--primary);font-size:.85em;
+  }
+  .timeline-step.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+  /* Model flow */
+  .model-flow{display:flex;flex-direction:column;align-items:center;gap:.25em;}
+  .model-node{
+    width:75%;padding:.5em .8em;border-radius:10px;color:#fff;text-align:center;
+    font-weight:700;font-size:.6em;box-shadow:0 3px 10px rgba(0,0,0,.15);
+  }
+  .model-arrow{color:var(--muted);font-size:1em;line-height:0;}
+
+  /* Thanks slide */
+  .thanks-slide{
+    background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%)!important;
+    color:#fff!important;text-align:center;height:100%;display:flex!important;
+    flex-direction:column;justify-content:center;position:relative;overflow:hidden;
+  }
+  .thanks-slide h1{color:#fff!important;font-size:2.4em!important;letter-spacing:-.02em;}
+  .thanks-slide .big{font-size:4.5em!important;font-weight:900;color:var(--gold);
+    text-shadow:0 8px 30px rgba(0,0,0,.4);margin:.1em 0;}
+
+  /* Fragment animations */
+  .reveal .fragment.fade-up{transform:translateY(30px);opacity:0;transition:all .6s cubic-bezier(.4,0,.2,1);}
+  .reveal .fragment.fade-up.visible{transform:translateY(0);opacity:1;}
+  .reveal .fragment.zoom{transform:scale(.8);opacity:0;transition:all .5s ease;}
+  .reveal .fragment.zoom.visible{transform:scale(1);opacity:1;}
+</style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- =========== 1. TITLE =========== -->
+<section class="title-slide">
+  <div class="badge">Психология дәрісі</div>
+  <h1>ӨМІРДІҢ МӘНІ, КӘСІБИ ӨЗІН-ӨЗІ АНЫҚТАУ<br>
+  ЖӘНЕ ДЕНСАУЛЫҚ ПСИХОЛОГИЯСЫ</h1>
+  <div class="subtitle">Тұлғаның рухани және физикалық дамуы</div>
+  <div class="meta">
+    Екі тақырыпты қамтитын дәріс материалдары<br>
+    Атырау, 2026
+  </div>
+</section>
+
+<!-- =========== 2. OUTLINE =========== -->
+<section>
+  <div class="slide-number-big">02</div>
+  <h2 class="slide-header">Дәрістің мазмұны</h2>
+  <div class="cards c2">
+    <div class="card primary fragment fade-up">
+      <h4>🎯 1-ТАҚЫРЫП</h4>
+      <p><strong>Өмірдің мәні және кәсіби өзін-өзі анықтау психологиясы</strong></p>
+      <ul style="font-size:.9em;margin:.3em 0 0 1em;padding:0;">
+        <li>Өмірдің мәні, мақсаттар</li>
+        <li>Маман сенімдері</li>
+        <li>Қазақстан жағдайындағы құндылықтар</li>
+        <li>Жеке мағыналар</li>
+        <li>Дағдарыс және эмоциялық қажу</li>
+      </ul>
+    </div>
+    <div class="card accent fragment fade-up">
+      <h4>❤️ 2-ТАҚЫРЫП</h4>
+      <p><strong>Тұлғаның денсаулық психологиясы</strong></p>
+      <ul style="font-size:.9em;margin:.3em 0 0 1em;padding:0;">
+        <li>Психика мен дене байланысы</li>
+        <li>Аурулардың психологиялық факторлары</li>
+        <li>Зиянды әдеттер</li>
+        <li>Салауатты өмір салты</li>
+      </ul>
+    </div>
+  </div>
+  <div class="highlight-box fragment fade-up">
+    <strong class="text-primary">Мақсат:</strong> кәсіби тұлғаның рухани, адамгершілік және физикалық денсаулығының өзара байланысын түсіну.
+  </div>
+</section>
+
+<!-- =========== 3. SECTION 1 DIVIDER =========== -->
+<section class="section-slide">
+  <div class="num">01</div>
+  <h1>ӨМІРДІҢ МӘНІ ЖӘНЕ<br>КӘСІБИ ӨЗІН-ӨЗІ АНЫҚТАУ</h1>
+  <p>Тұлғаның өмірлік мағынасын табуы, мақсаттар қоюы және кәсіби тұрғыдан қалыптасуы туралы негізгі ұғымдар</p>
+</section>
+
+<!-- =========== 4. LIFE MEANING =========== -->
+<section>
+  <div class="slide-number-big">04</div>
+  <h2 class="slide-header">1.1 Өмірдің мәні, өмірлік мақсаттар және бағдарламалар</h2>
+  <div class="two-col">
+    <div>
+      <div class="card primary fragment fade-up" style="font-size:.9em;">
+        <h4>Өмірдің мәні дегеніміз не?</h4>
+        <p>Тұлғаның өз өмір сүруінің мәні мен бағытын түсінуі — қандай құндылықтар үшін өмір сүретінін, неге ұмтылатынын саналы түрде анықтау.</p>
+      </div>
+      <div class="accent-box fragment fade-up">
+        <strong>В. Франкл</strong> (экзистенциалдық психология): «Өмірдің мәні — адамның өз өміріне мағына беретін ішкі мұраты».
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:.8em;color:var(--accent);">Өмірлік мақсаттар жүйесі:</h3>
+      <ul class="big-list">
+        <li class="fragment zoom">
+          <div class="icon">🌱</div>
+          <div class="content"><h4>Қысқа мерзімді</h4><p>Апта, ай, бір жылға</p></div>
+        </li>
+        <li class="fragment zoom">
+          <div class="icon">🌿</div>
+          <div class="content"><h4>Орта мерзімді</h4><p>3–5 жылдық жоспарлар</p></div>
+        </li>
+        <li class="fragment zoom">
+          <div class="icon">🌳</div>
+          <div class="content"><h4>Өмірлік стратегия</h4><p>10+ жыл, миссия</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========== 5. LIFE PROGRAMS =========== -->
+<section>
+  <div class="slide-number-big">05</div>
+  <h2 class="slide-header">Өмірлік бағдарламаның 4 деңгейі</h2>
+  <div class="model-flow">
+    <div class="model-node fragment fade-up" style="background:linear-gradient(135deg,#2E4057,#3D5A80);">
+      🎯 МИССИЯ <span class="small" style="color:#ddd;">— өмірдегі басты мақсат, «мен неге бармын?»</span>
+    </div>
+    <div class="model-arrow fragment">▼</div>
+    <div class="model-node fragment fade-up" style="background:linear-gradient(135deg,#3D5A80,#5B82AB);">
+      💎 ҚҰНДЫЛЫҚТАР <span class="small" style="color:#eee;">— отбасы, білім, мансап, денсаулық, рух</span>
+    </div>
+    <div class="model-arrow fragment">▼</div>
+    <div class="model-node fragment fade-up" style="background:linear-gradient(135deg,#F4A261,#E9C46A);">
+      📋 МАҚСАТТАР <span class="small" style="color:#fff;">— SMART: нақты, өлшенетін, қол жеткізілетін</span>
+    </div>
+    <div class="model-arrow fragment">▼</div>
+    <div class="model-node fragment fade-up" style="background:linear-gradient(135deg,#E76F51,#F4A261);">
+      🏃 ӘРЕКЕТТЕР <span class="small" style="color:#fff;">— күнделікті қадамдар мен әдеттер</span>
+    </div>
+  </div>
+  <div class="highlight-box fragment fade-up">
+    «Мақсаты жоқ адам — желкенсіз кемеге ұқсайды» <em>— көне даналық</em>
+  </div>
+</section>
+
+<!-- =========== 6. PROFESSIONAL BELIEFS =========== -->
+<section>
+  <div class="slide-number-big">06</div>
+  <h2 class="slide-header">1.2 Кәсіби маманның сенімдері мен бағдарлары</h2>
+  <div class="cards c2">
+    <div class="card primary fragment fade-up">
+      <h4>🧭 Кәсіби сенім деген не?</h4>
+      <p>Маманның өз мамандығы, оның қоғамдық мәні, этикалық негіздері мен дамуы туралы орнықты көзқарастарының жүйесі.</p>
+    </div>
+    <div class="card accent fragment fade-up">
+      <h4>🎯 Кәсіби бағдар</h4>
+      <p>Тұлғаның кәсіби қызметте ұстанатын құндылық ориентирлері, ұмтылыстары мен мінез-құлық бағыты.</p>
+    </div>
+  </div>
+  <h3 style="font-size:.85em;color:var(--accent);margin-top:.5em;">Кәсіби сенімнің 5 негізгі компоненті:</h3>
+  <div class="cards c3" style="gap:.4em;">
+    <div class="card gold fragment zoom"><h4>✓ Когнитивтік</h4><p>Кәсіп туралы білім мен түсінік</p></div>
+    <div class="card gold fragment zoom"><h4>✓ Эмоциялық</h4><p>Кәсіпке деген махаббат, шабыт</p></div>
+    <div class="card gold fragment zoom"><h4>✓ Мотивациялық</h4><p>Жетістікке ұмтылу энергиясы</p></div>
+    <div class="card green fragment zoom"><h4>✓ Этикалық</h4><p>Кәсіби мораль, жауапкершілік</p></div>
+    <div class="card green fragment zoom"><h4>✓ Конативтік</h4><p>Нақты кәсіби әрекет</p></div>
+  </div>
+</section>
+
+<!-- =========== 7. KAZAKHSTAN PROFESSIONAL VALUES =========== -->
+<section>
+  <div class="slide-number-big">07</div>
+  <h2 class="slide-header">1.3 Қазақстан заманауи даму кезеңіндегі құндылықтар</h2>
+  <div class="two-col">
+    <div>
+      <h3 style="font-size:.8em;color:var(--primary);">«Рухани жаңғыру» бағдарламасы аясында:</h3>
+      <ul class="icon-list">
+        <li class="fragment fade-up"><strong>Бәсекеге қабілеттілік</strong> — ғаламдық нарықта</li>
+        <li class="fragment fade-up"><strong>Прагматизм</strong> — нақты нәтижеге бағдар</li>
+        <li class="fragment fade-up"><strong>Ұлттық бірегейлік</strong> — мәдени тамырды сақтау</li>
+        <li class="fragment fade-up"><strong>Білімнің культі</strong> — life-long learning</li>
+        <li class="fragment fade-up"><strong>Ашық сана</strong> — жаңалықтарды қабылдау</li>
+        <li class="fragment fade-up"><strong>Эволюциялық даму</strong> — тұрақты өсу</li>
+      </ul>
+    </div>
+    <div>
+      <div class="chart-container" style="height:340px;">
+        <canvas id="valuesChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== 8. PERSONAL VALUES =========== -->
+<section>
+  <div class="slide-number-big">08</div>
+  <h2 class="slide-header">1.4 Кәсіби өзін-өзі анықтаудағы жеке құндылықтар</h2>
+  <div class="cards c2">
+    <div class="card primary fragment fade-up">
+      <h4>Жеке құндылықтар (personal values)</h4>
+      <p>Адамның өмірде басты маңызды деп санайтын идеялары, принциптері мен ұмтылыстары.</p>
+    </div>
+    <div class="card accent fragment fade-up">
+      <h4>Жеке мағыналар (personal meanings)</h4>
+      <p>Құндылықтардың тұлғаға субъективті мәнге ие болуы, «менің» өмірімдегі орны.</p>
+    </div>
+  </div>
+  <h3 style="font-size:.85em;color:var(--accent);margin-top:.6em;">М. Рокич бойынша құндылықтардың екі тобы:</h3>
+  <div class="two-col">
+    <div class="card gold fragment fade-up">
+      <h4>🏆 Терминалдық (мақсат-құндылықтар)</h4>
+      <ul style="font-size:.85em;margin:0;padding-left:1em;">
+        <li>Бақытты өмір</li>
+        <li>Денсаулық</li>
+        <li>Отбасы</li>
+        <li>Махаббат</li>
+        <li>Еркіндік</li>
+        <li>Өзін-өзі дамыту</li>
+      </ul>
+    </div>
+    <div class="card green fragment fade-up">
+      <h4>🛠 Инструменталдық (құрал-құндылықтар)</h4>
+      <ul style="font-size:.85em;margin:0;padding-left:1em;">
+        <li>Жауапкершілік</li>
+        <li>Тәрбиелік</li>
+        <li>Шыдамдылық</li>
+        <li>Адалдық</li>
+        <li>Білімділік</li>
+        <li>Өз бетінше жұмыс</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========== 9. PROFESSIONAL GROWTH OBSTACLES =========== -->
+<section>
+  <div class="slide-number-big">09</div>
+  <h2 class="slide-header">1.5 Кәсіби өсудегі кедергілер</h2>
+  <div class="cards c2" style="gap:.5em;">
+    <div class="card accent fragment fade-up">
+      <h4>🧱 Ішкі кедергілер</h4>
+      <p style="font-size:.95em;"><strong>Психологиялық:</strong> өзіне сенімсіздік, перфекционизм, прокрастинация, өзін-өзі сынау</p>
+    </div>
+    <div class="card primary fragment fade-up">
+      <h4>🌍 Сыртқы кедергілер</h4>
+      <p style="font-size:.95em;"><strong>Әлеуметтік:</strong> бәсеке, ресурс жетіспеушілігі, отбасылық жүктеме, ұйымдастыру мәселелері</p>
+    </div>
+    <div class="card gold fragment fade-up">
+      <h4>📉 Дамулық кедергілер</h4>
+      <p style="font-size:.95em;">Кәсіби тоқырау (stagnation), жаңа технологияларға бейімделмеу, оқуды тоқтату</p>
+    </div>
+    <div class="card green fragment fade-up">
+      <h4>💔 Кәсіби сәйкестілік дағдарысы</h4>
+      <p style="font-size:.95em;">«Мен не істеп жүрмін?», «Бұл — менікі ме?» деген сұрақтар мен сенім жоғалуы</p>
+    </div>
+  </div>
+  <div class="success-box fragment fade-up">
+    <strong>✓ Жеңу жолдары:</strong> супервизия • коучинг • психологиялық кеңес • рефлексия күнделігі • mindfulness тәжірибелері • кәсіби қауымдастық
+  </div>
+</section>
+
+<!-- =========== 10. BURNOUT =========== -->
+<section>
+  <div class="slide-number-big">10</div>
+  <h2 class="slide-header">🔥 Эмоциялық қажу синдромы (burnout)</h2>
+  <p style="font-size:.7em;color:var(--muted);">
+    ДДҰ (WHO, 2019) — кәсіби феномен ретінде ресми тіркелген жағдай (ICD-11 код QD85)
+  </p>
+  <div class="two-col">
+    <div>
+      <h3 style="font-size:.8em;color:var(--primary);">K. Maslach 3 компоненттік моделі:</h3>
+      <ul class="big-list">
+        <li class="fragment fade-up"><div class="icon">⚡</div>
+          <div class="content"><h4>1. Эмоциялық шаршау</h4><p>Күш-қуаттың түгелдей таусылуы</p></div></li>
+        <li class="fragment fade-up"><div class="icon">🧊</div>
+          <div class="content"><h4>2. Деперсонализация</h4><p>Цинизм, адамдарға ыңғайсыздық</p></div></li>
+        <li class="fragment fade-up"><div class="icon">📉</div>
+          <div class="content"><h4>3. Жетістік сезімінің төмендеуі</h4><p>«Мен пайдасызмын» сезімі</p></div></li>
+      </ul>
+    </div>
+    <div>
+      <div class="chart-container" style="height:340px;">
+        <canvas id="burnoutChart"></canvas>
+      </div>
+      <p class="small" style="text-align:center;">Burnout динамикасы — стадиялар</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========== 11. SECTION 2 DIVIDER =========== -->
+<section class="section-slide" style="background:linear-gradient(135deg,#2A9D8F 0%,#264653 100%)!important;">
+  <div class="num">02</div>
+  <h1>ТҰЛҒАНЫҢ<br>ДЕНСАУЛЫҚ ПСИХОЛОГИЯСЫ</h1>
+  <p>Психика мен дененің біртұтастығы, ауру мен денсаулықтың психологиялық факторлары, салауатты өмір салты</p>
+</section>
+
+<!-- =========== 12. MIND-BODY =========== -->
+<section>
+  <div class="slide-number-big">12</div>
+  <h2 class="slide-header">2.1 Психика мен дененің өзара байланысы</h2>
+  <div class="two-col">
+    <div>
+      <div class="accent-box fragment fade-up">
+        <strong>Психосоматика</strong> — психикалық жағдайлардың дене ағзаларына әсер ететіні және, керісінше, дене күйінің психикаға ықпал ететіні туралы ғылым.
+      </div>
+      <h3 style="font-size:.75em;color:var(--primary);margin-top:.4em;">Психиканың денеге әсері:</h3>
+      <ul class="icon-list">
+        <li class="fragment fade-up">Созылмалы стресс → жүрек аурулары</li>
+        <li class="fragment fade-up">Ішіне жинаған ашу → гастрит, жара</li>
+        <li class="fragment fade-up">Ұзақ уайым → иммунитеттің әлсіреуі</li>
+        <li class="fragment fade-up">Қорқыныш → гипертония</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:.75em;color:var(--accent);">Дененің психикаға әсері:</h3>
+      <ul class="icon-list">
+        <li class="fragment fade-up">Ұйқы жетіспеушілігі → шаршау, ашуланшақтық</li>
+        <li class="fragment fade-up">Дене жаттығулары → эндорфин, жағымды күй</li>
+        <li class="fragment fade-up">Дұрыс тамақтану → танымдық қабілет</li>
+        <li class="fragment fade-up">Созылмалы ауру → депрессия</li>
+      </ul>
+      <div class="success-box fragment fade-up" style="margin-top:.4em;">
+        <strong>«Mens sana in corpore sano»</strong> — «Сау денеде — сау сана» (Ювенал)
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== 13. DISEASE FACTORS =========== -->
+<section>
+  <div class="slide-number-big">13</div>
+  <h2 class="slide-header">2.2 Аурулардың психологиялық факторлары</h2>
+  <div class="chart-container" style="height:340px;">
+    <canvas id="healthFactorsChart"></canvas>
+  </div>
+  <p class="small" style="text-align:center;">Денсаулықты анықтайтын факторлар салмағы (ДДҰ бойынша)</p>
+  <div class="highlight-box fragment fade-up">
+    <strong class="text-accent">50%+</strong> — салауатты өмір салты, эмоциялық жағдай, психологиялық бейімделу. Тек 10% медициналық қызметке тәуелді!
+  </div>
+</section>
+
+<!-- =========== 14. HEALTH FACTORS DETAIL =========== -->
+<section>
+  <div class="slide-number-big">14</div>
+  <h2 class="slide-header">Денсаулықты нығайтатын психологиялық факторлар</h2>
+  <div class="cards c3" style="gap:.4em;">
+    <div class="card green fragment zoom"><h4>😊 Позитивтік ойлау</h4><p>Оптимизм, үміт, жағымды эмоциялар</p></div>
+    <div class="card green fragment zoom"><h4>🧘 Стрессті басқару</h4><p>Релаксация, медитация, тыныс алу</p></div>
+    <div class="card green fragment zoom"><h4>👥 Әлеуметтік қолдау</h4><p>Отбасы, достар, қауымдастық</p></div>
+    <div class="card primary fragment zoom"><h4>🎯 Өмір мәні</h4><p>Мағынаның болуы — ұзақ өмір белгісі</p></div>
+    <div class="card primary fragment zoom"><h4>💭 Эмоц. интеллект</h4><p>Сезімдерді тану, реттеу</p></div>
+    <div class="card primary fragment zoom"><h4>🏋️ Өзін-өзі бақылау</h4><p>Ерік-жігер, дисциплина</p></div>
+  </div>
+  <div class="accent-box fragment fade-up">
+    <strong>Кері жақ:</strong> созылмалы стресс, депрессия, мазасыздық, әлеуметтік оқшаулану — аурулардың психологиялық триггерлері
+  </div>
+</section>
+
+<!-- =========== 15. BAD HABITS =========== -->
+<section>
+  <div class="slide-number-big">15</div>
+  <h2 class="slide-header">2.3 Психобелсенді заттар мен зиянды әдеттер</h2>
+  <div class="two-col">
+    <div>
+      <div class="chart-container" style="height:320px;">
+        <canvas id="habitsChart"></canvas>
+      </div>
+    </div>
+    <div>
+      <ul class="big-list">
+        <li class="fragment fade-up"><div class="icon">🚬</div>
+          <div class="content"><h4>Темекі</h4><p>+10 жыл өмірдің қысқаруы</p></div></li>
+        <li class="fragment fade-up"><div class="icon">🍺</div>
+          <div class="content"><h4>Алкоголь</h4><p>Жүйке жүйесі, бауыр, жүрек</p></div></li>
+        <li class="fragment fade-up"><div class="icon">💊</div>
+          <div class="content"><h4>Наркотик</h4><p>Психикалық бұзылыстар, тәуелділік</p></div></li>
+        <li class="fragment fade-up"><div class="icon">📱</div>
+          <div class="content"><h4>Цифрлық тәуелділік</h4><p>Ұйқы, зейін, әлеуметтік байланыс</p></div></li>
+        <li class="fragment fade-up"><div class="icon">🍟</div>
+          <div class="content"><h4>Дұрыс емес тамақтану</h4><p>Семіздік, диабет, жүрек аурулары</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========== 16. HEALTHY LIFESTYLE =========== -->
+<section>
+  <div class="slide-number-big">16</div>
+  <h2 class="slide-header">2.4 Салауатты өмір салты — жетістіктің негізі</h2>
+  <div class="cards c4" style="gap:.4em;">
+    <div class="stat-card fragment zoom"><div class="val">150</div><div class="lbl">Мин/апта жаттығу</div></div>
+    <div class="stat-card fragment zoom" style="background:linear-gradient(135deg,var(--accent),var(--accent2));"><div class="val">7-9</div><div class="lbl">Сағат ұйқы</div></div>
+    <div class="stat-card fragment zoom" style="background:linear-gradient(135deg,var(--gold),#F0B84A);"><div class="val">2L</div><div class="lbl">Су күніне</div></div>
+    <div class="stat-card fragment zoom" style="background:linear-gradient(135deg,var(--green),#4CAF50);"><div class="val">5+</div><div class="lbl">Көкөніс/жеміс</div></div>
+  </div>
+  <h3 style="font-size:.8em;color:var(--primary);margin-top:.5em;">Салауатты өмір салтының 6 тірегі:</h3>
+  <div class="cards c3" style="gap:.4em;">
+    <div class="card accent fragment fade-up"><h4>🏃 Қимыл-қозғалыс</h4><p>Күніне 30 мин ең аз дегенде</p></div>
+    <div class="card accent fragment fade-up"><h4>🥗 Тепе-тең тамақтану</h4><p>Көкөніс, ақуыз, су</p></div>
+    <div class="card accent fragment fade-up"><h4>😴 Сапалы ұйқы</h4><p>Тұрақты режим</p></div>
+    <div class="card green fragment fade-up"><h4>🧘 Стрессті басқару</h4><p>Медитация, хобби</p></div>
+    <div class="card green fragment fade-up"><h4>🚫 Зиянды әдеттерсіз</h4><p>Темекі, алкогольсіз</p></div>
+    <div class="card green fragment fade-up"><h4>👥 Әлеуметтік байланыс</h4><p>Жақындарымен уақыт</p></div>
+  </div>
+</section>
+
+<!-- =========== 17. SUCCESS CORRELATION =========== -->
+<section>
+  <div class="slide-number-big">17</div>
+  <h2 class="slide-header">💪 Денсаулық пен кәсіби жетістік байланысы</h2>
+  <div class="chart-container" style="height:380px;">
+    <canvas id="successChart"></canvas>
+  </div>
+  <div class="success-box fragment fade-up">
+    <strong>Harvard зерттеуі (75 жыл):</strong> өмірде табысты адамдардың басты ортақ қасиеттері — <span class="text-green">сапалы әлеуметтік байланыстар</span>, <span class="text-green">психикалық денсаулық</span> және <span class="text-green">мағыналы кәсіп</span>.
+  </div>
+</section>
+
+<!-- =========== 18. CONCLUSION =========== -->
+<section>
+  <div class="slide-number-big">18</div>
+  <h2 class="slide-header">🎯 Негізгі тұжырымдар</h2>
+  <ul class="icon-list" style="font-size:1em;">
+    <li class="fragment fade-up"><strong>Өмірдің мәні</strong> — бұл тұлғаның өз өмірінің бағытын саналы түрде таңдауы</li>
+    <li class="fragment fade-up"><strong>Кәсіби өзін-өзі анықтау</strong> — өмірлік мағынаның маңызды бөлігі</li>
+    <li class="fragment fade-up"><strong>Құндылықтар</strong> — кәсіби әрекетке бағыт беретін ішкі компас</li>
+    <li class="fragment fade-up"><strong>Эмоциялық қажу</strong> — заманауи дәуірдегі өзекті кәсіби тәуекел</li>
+    <li class="fragment fade-up"><strong>Психика мен дене</strong> — бір тұтас жүйе, бір-біріне әсер етеді</li>
+    <li class="fragment fade-up"><strong>Салауатты өмір салты</strong> — кәсіби табыс пен өмір сапасының негізі</li>
+  </ul>
+</section>
+
+<!-- =========== 19. THANKS =========== -->
+<section class="thanks-slide">
+  <h1>НАЗАРЛАРЫҢЫЗҒА</h1>
+  <div class="big">РАХМЕТ!</div>
+  <p style="font-size:.9em;opacity:.95;">Сұрақтар бар ма?</p>
+  <p style="font-size:.55em;opacity:.7;margin-top:2em;">Психология дәрісі • 2026</p>
+</section>
+
+</div>
+</div>
+
+<script>
+Reveal.initialize({
+  hash:true, slideNumber:false, controls:true, progress:true,
+  transition:'slide', transitionSpeed:'default',
+  width:1100, height:680, margin:.02, minScale:.1, maxScale:2, center:true,
+});
+
+Chart.defaults.font.family = 'Inter, Segoe UI, sans-serif';
+Chart.defaults.font.size = 12;
+Chart.defaults.color = '#333';
+
+const PRIMARY='#2E4057', ACCENT='#E76F51', GOLD='#E9C46A', GREEN='#2A9D8F';
+
+function chartOnShow(id, builder){
+  let built = false;
+  const tryBuild = () => {
+    if(built) return;
+    const el = document.getElementById(id);
+    if(el && el.offsetParent !== null){ builder(el); built = true; }
+  };
+  Reveal.on('slidechanged', tryBuild);
+  Reveal.on('ready', tryBuild);
+}
+
+// Values chart
+chartOnShow('valuesChart', (c)=>{
+  new Chart(c, {
+    type:'radar',
+    data:{
+      labels:['Бәсекеге\nқабілеттілік','Прагматизм','Ұлттық\nбірегейлік','Білімнің\nкульті','Ашық сана','Эволюциялық\nдаму'],
+      datasets:[{
+        label:'Маңыздылық',
+        data:[9.2,8.5,8.8,9.5,8.3,8.7],
+        backgroundColor:'rgba(231,111,81,.25)',
+        borderColor:ACCENT, borderWidth:3,
+        pointBackgroundColor:ACCENT, pointBorderColor:'#fff', pointRadius:5
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{r:{min:0,max:10,ticks:{stepSize:2,backdropColor:'transparent'},pointLabels:{font:{size:10,weight:'600'}}}},
+      animation:{duration:1600}
+    }
+  });
+});
+
+// Burnout chart
+chartOnShow('burnoutChart', (c)=>{
+  new Chart(c, {
+    type:'line',
+    data:{
+      labels:['Ынта','Тоқырау','Фрустрация','Апатия','Қажу'],
+      datasets:[{
+        label:'Жұмысқа деген қызығушылық',
+        data:[95,75,50,25,10],
+        backgroundColor:'rgba(231,111,81,.2)',
+        borderColor:ACCENT, borderWidth:3,
+        tension:.4, fill:true,
+        pointBackgroundColor:ACCENT, pointRadius:6
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{
+        y:{min:0,max:100,ticks:{callback:v=>v+'%'}},
+        x:{grid:{display:false}}
+      },
+      animation:{duration:1800}
+    }
+  });
+});
+
+// Health factors
+chartOnShow('healthFactorsChart', (c)=>{
+  new Chart(c, {
+    type:'doughnut',
+    data:{
+      labels:['Өмір салты (50%)','Тұқымқуалаушылық (20%)','Қоршаған орта (20%)','Медицина (10%)'],
+      datasets:[{
+        data:[50,20,20,10],
+        backgroundColor:[GREEN,PRIMARY,GOLD,ACCENT],
+        borderWidth:3, borderColor:'#fff'
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      cutout:'55%',
+      plugins:{legend:{position:'right',labels:{font:{size:12,weight:'600'},padding:10}}},
+      animation:{animateRotate:true,duration:1500}
+    }
+  });
+});
+
+// Bad habits
+chartOnShow('habitsChart', (c)=>{
+  new Chart(c, {
+    type:'bar',
+    data:{
+      labels:['Темекі','Алкоголь','Наркотик','Цифрлық','Тамақ'],
+      datasets:[{
+        label:'Денсаулыққа әсер (%)',
+        data:[85,75,95,55,65],
+        backgroundColor:[ACCENT,'#F4A261',GREEN,PRIMARY,GOLD],
+        borderRadius:8, borderSkipped:false
+      }]
+    },
+    options:{
+      indexAxis:'y',
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>ctx.parsed.x+'% зиян'}}},
+      scales:{x:{beginAtZero:true,max:100,ticks:{callback:v=>v+'%'}},y:{grid:{display:false}}},
+      animation:{duration:1400}
+    }
+  });
+});
+
+// Success correlation
+chartOnShow('successChart', (c)=>{
+  new Chart(c, {
+    type:'bar',
+    data:{
+      labels:['Физикалық\nденсаулық','Психикалық\nденсаулық','Әлеуметтік\nбайланыс','Өмір\nмәні','Стрессті\nбасқару'],
+      datasets:[
+        {label:'Кәсіби жетістік', data:[75,90,85,95,80], backgroundColor:PRIMARY, borderRadius:6},
+        {label:'Өмір сапасы', data:[80,95,92,90,85], backgroundColor:GREEN, borderRadius:6}
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{position:'top',labels:{font:{size:13,weight:'700'}}}},
+      scales:{y:{beginAtZero:true,max:100,ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}},
+      animation:{duration:1600}
+    }
+  });
+});
+</script>
+</body>
+</html>
